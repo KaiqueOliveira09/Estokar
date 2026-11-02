@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <title>Entrar · Ciboff</title>
+  <script>
+    try {
+      const t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+    } catch {}
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+</head>
+<body class="grid h-full place-items-center p-4">
+  <form id="login-form" class="card w-full max-w-sm p-6 shadow-sm">
+    <img src="assets/img/logo-ac.webp" alt="Logo AC" class="mx-auto mb-2 h-32 w-auto" width="172" height="128">
+    <div class="logo-text font-display text-center text-4xl font-bold">Ciboff</div>
+    <hr class="divider-gold mx-auto my-4 w-16">
+    <h1 class="text-center text-lg font-semibold">Entrar no sistema</h1>
+    <p class="mt-1 text-center text-sm text-muted">Use o e-mail e a senha de acesso da loja.</p>
+    <label class="label mt-5" for="email">E-mail</label>
+    <input id="email" type="email" required autocomplete="username"
+           class="input mt-1 !h-11">
+    <label class="label mt-3" for="password">Senha</label>
+    <input id="password" type="password" required autocomplete="current-password"
+           class="input mt-1 !h-11">
+    <p id="login-error" class="mt-3 hidden text-sm text-rose-600"></p>
+    <button class="btn btn-gold btn-lg mt-5 w-full">Entrar</button>
+  </form>
+  <script type="module" src="js/modules/auth/login.js"></script>
+</body>
+</html>
